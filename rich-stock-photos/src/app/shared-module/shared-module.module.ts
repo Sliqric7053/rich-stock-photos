@@ -8,12 +8,26 @@ import {
   MatToolbarModule,
   MatCardModule,
   MatDividerModule,
-  MatStepperModule
+  MatStepperModule,
+  MatInputModule,
+  MatIconModule
 } from '@angular/material';
 
 @NgModule({
   declarations: [],
-  imports: [CommonModule, MatButtonModule, MatCheckboxModule],
+  imports: [
+    CommonModule,
+    MatButtonModule,
+    MatCheckboxModule,
+    MatMenuModule,
+    MatSidenavModule,
+    MatToolbarModule,
+    MatCardModule,
+    MatDividerModule,
+    MatStepperModule,
+    MatInputModule,
+    MatIconModule
+  ],
   exports: [
     MatButtonModule,
     MatCheckboxModule,
@@ -22,7 +36,9 @@ import {
     MatToolbarModule,
     MatCardModule,
     MatDividerModule,
-    MatStepperModule
+    MatStepperModule,
+    MatInputModule,
+    MatIconModule
   ]
 })
 export class SharedModuleModule {}

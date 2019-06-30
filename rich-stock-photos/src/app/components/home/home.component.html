@@ -1,20 +1,70 @@
-<mat-toolbar
-  class="toolbar-header"
-  color="primary"
-  role="heading"
-  aria-label="heading"
->
-  <div class="toolbar-options">
-    <span>Photos</span>
-    <span>Illustrations</span>
-    <span>Video</span>
+<nav>
+  <mat-toolbar
+    class="toolbar-header"
+    color="primary"
+    role="heading"
+    aria-label="heading"
+  >
+    <div class="toolbar-options">
+      <span>Photos</span>
+      <span>Illustrations</span>
+      <span>Video</span>
+    </div>
+    <div>
+      <span class="logo">Rich 📷 Stock</span>
+    </div>
+    <div class="toolbar-options">
+      <span>Pricing</span>
+      <span>Sign in</span>
+      <span>Join</span>
+    </div>
+  </mat-toolbar>
+</nav>
+<section class="main-container">
+  <div class="welcome-message">
+    <p class="text-extralarge">
+      Find the perfect stock asset for your next creative project
+    </p>
+    <div class="main-search">
+      <mat-form-field appearance="outline" style="display: block">
+        <mat-label>Search</mat-label>
+        <input
+          matInput
+          placeholder="Find the perfect stock photos, illustrations and more…"
+        />
+        <mat-icon matSuffix>camera</mat-icon>
+      </mat-form-field>
+    </div>
   </div>
-  <div>
-    <span class="logo">Rich 📷 Stock</span>
+</section>
+<section class="action-container">
+  <div class="action-message">
+    <span>Get 10 free Rich Stock images.</span>
+    <button mat-stroked-button color="primary" class="action">Start now</button>
   </div>
-  <div class="toolbar-options">
-    <span>Pricing</span>
-    <span>Sign in</span>
-    <span>Join</span>
+</section>
+<section>
+  <div class="collections-message">
+    <p>CURATED ASSET COLLECTIONS</p>
+    <p>
+      Explore diverse collections of our most incredible high-resolution,
+      royalty-free, stock assets
+    </p>
   </div>
-</mat-toolbar>
+</section>
+<section class="card-group">
+  <mat-card class="example-card">
+    <img
+      mat-card-image
+      src="https://material.angular.io/assets/img/examples/shiba2.jpg"
+      alt="Photo of a Shiba Inu"
+    />
+    <mat-card-content>
+      <p class="card-header">Photos</p>
+      <p>
+        Discover beautiful and inspiring stock images with new content uploaded
+        daily.
+      </p>
+    </mat-card-content>
+  </mat-card>
+</section>
