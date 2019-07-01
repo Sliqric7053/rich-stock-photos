@@ -67,14 +67,33 @@ mat-form-field.main-search {
   margin: 0 10px;
 }
 
+img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-group-container {
+  width: 100vw;
+  background: var(--smokey);
+}
+
+.collections-message {
+  text-align: center;
+}
+
+.mat-card {
+  color: var(--blackish);
+  background: var(--smokey);
+}
+
 .card-group {
   display: grid;
-  justify-content: center;
+  grid-template-columns: repeat(3, minmax(130px, 1fr));
+  grid-gap: 1.5rem;
+  padding: 2rem;
+  grid-auto-flow: dense;
   align-items: center;
-  border: 5px solid rgba(0, 0, 0, 0.03);
   border-radius: 3px;
-  font-size: 35px;
-  width: 280px;
 }
 
 .example-header-image {
