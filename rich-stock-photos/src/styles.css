@@ -14,8 +14,10 @@ purple-green.css
 :root {
   --yellow: #ffc600;
   --blackish: #272727;
-  --gray: whitesmoke;
+  --smokey: #f5f5f5;
   --white: white;
+  --grayish: #8e8e8e;
+  /* name colors: primaryColorDark, primaryColorLight, tertiaryColor etc */
 }
 
 html,
