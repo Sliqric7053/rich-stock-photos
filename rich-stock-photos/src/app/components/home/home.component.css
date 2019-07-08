@@ -67,9 +67,10 @@ mat-form-field.main-search {
   margin: 0 10px;
 }
 
-img {
-  height: 100%;
+.image {
+  height: 260px;
   object-fit: cover;
+  grid-area: promo-image;
 }
 
 .card-group-container {
@@ -77,13 +78,37 @@ img {
   background: var(--smokey);
 }
 
-.collections-message {
+.promo-message p:first-child,
+.collections-message p:first-child {
   text-align: center;
+  text-transform: uppercase;
+  padding: 1.5rem;
+  letter-spacing: 0.0625rem;
+  font-size: 0.875rem;
+  font-weight: bold;
+}
+
+.promo-message p:last-child,
+.collections-message p:last-child {
+  text-align: center;
+  color: var(--grayish);
+  font-size: 1.5rem;
+  font-weight: 300;
+  margin: 0 35%;
+}
+
+hr {
+  margin: 2% 42%;
+  color: var(--grayish);
 }
 
 .mat-card {
   color: var(--blackish);
   background: var(--smokey);
+}
+
+.card-header {
+  padding-bottom: 0.5rem;
 }
 
 .card-group {
@@ -103,4 +128,50 @@ img {
 
 .card-header {
   font-weight: bold;
+}
+
+.message-area {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.combo-message-heading {
+  text-transform: capitalize;
+  padding: 1rem;
+  font-size: 2rem;
+}
+
+.combo-1,
+.combo-2,
+.combo-3 {
+  display: grid;
+  grid-template-areas: 'promo-image promo-text-area';
+  padding: 4em 0;
+}
+
+.combo-2 > img {
+  grid-column: 7/13;
+  grid-row: 1/2;
+}
+
+img {
+  object-fit: contain;
+  height: 450px;
+}
+
+/* Change img to div */
+/* .combo-img {
+  object-fit: contain;
+  background: url(/assets/images/ara-640x426.jpg) no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 450px;
+  grid-column: 7/13;
+  grid-row: 1/2;
+} */
+
+.combo-message {
+  margin: 0 5rem;
 }
