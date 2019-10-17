@@ -1,4 +1,5 @@
 .toolbar-header {
+  display: flex;
   justify-content: space-between;
   font-size: 1em;
   font-weight: 300;
@@ -131,7 +132,7 @@ hr {
 
 .card-group {
   display: grid;
-  grid-template-columns: repeat(3, minmax(130px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
   grid-gap: 1.5rem;
   padding: 2rem 2rem 3rem 2rem;
   grid-auto-flow: dense;
@@ -142,6 +143,32 @@ hr {
 .example-header-image {
   background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
   background-size: cover;
+}
+
+.combo {
+  display: grid;
+  padding-bottom: 5rem;
+}
+
+img {
+  object-fit: cover;
+  width: 100%;
+  height: auto;
+}
+
+.combo-1,
+.combo-2,
+.combo-3 {
+  display: flex;
+  padding: 3rem 0;
+}
+
+.combo-2 > div {
+  order: 1;
+}
+
+.combo-2 > img {
+  order: 2;
 }
 
 .message-area {
@@ -159,23 +186,6 @@ hr {
   color: var(--dark-text);
 }
 
-.combo-1,
-.combo-2,
-.combo-3 {
-  display: grid;
-  grid-template-areas: 'promo-image promo-text-area';
-  padding: 4em 0;
-}
-
-.combo-2 > img {
-  grid-column: 7/13;
-  grid-row: 1/2;
-}
-
-img {
-  object-fit: contain;
-  height: 450px;
-}
 .combo-message {
   margin: 0 5rem;
 }
@@ -237,6 +247,7 @@ img {
 .purchase-container {
   background: var(--white);
   text-align: center;
+  padding-bottom: 4rem;
 }
 
 .purchase-container > .header > p {
@@ -288,4 +299,100 @@ img {
   width: 100%;
   padding: 1rem;
   border-radius: 12px 12px 0 0;
+}
+
+.footer-container {
+  background: var(--blackish);
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  font-size: 0.875rem;
+  font-weight: 300;
+  padding: 2rem;
+}
+
+.footer-container > .category-area {
+  padding: 0 4rem 2rem;
+}
+
+.category-area > .header-text {
+  color: var(--white);
+  padding: 3rem 0;
+}
+
+.header-text > p:first-child {
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+
+.header-text > p:last-child {
+  font-weight: 300;
+  font-style: italic;
+  padding-top: 0.3rem;
+}
+
+.category-area > .category-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 1rem;
+  color: var(--white);
+  border-right: 2px solid var(--grayish);
+}
+
+.feature-area .logo > img {
+  height: 48px;
+  width: 48px;
+}
+
+.feature-area .text > p {
+  color: var(--white);
+}
+
+.feature-area .text {
+  padding: 1rem 0;
+  line-height: 1.5rem;
+  font-size: 1rem;
+}
+
+.feature-area {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  line-height: 1rem;
+}
+
+.feature-area > .content {
+  padding: 1rem;
+}
+
+@media (max-width: 700px) {
+  .toolbar-header {
+    display: none;
+  }
+
+  .action-message > button {
+    width: 7rem;
+  }
+
+  .text-extralarge {
+    font-size: 1.5rem;
+    line-height: 3rem;
+    font-weight: 100;
+    width: 70%;
+  }
+
+  .collections-message > p:first-child,
+  .collections-message > p:last-child {
+    font-size: 0.9rem;
+  }
+
+  .promo-message > p:first-child,
+  .promo-message > p:last-child {
+    font-size: 0.9rem;
+  }
+
+  .combo-1,
+  .combo-2,
+  .combo-3 {
+    display: block;
+  }
 }
