@@ -1,25 +1,59 @@
+/* Navigation */
+
+.is-mobile {
+  position: fixed;
+  /* Make sure the toolbar will stay on top of the content as it scrolls past. */
+  z-index: 2;
+}
+
+.sidenav-container {
+  /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This
+     causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */
+  flex: 1;
+}
+
+.is-mobile .sidenav-container {
+  /* When the sidenav is fixed, don't constrain the height of the sidenav container. This allows the
+     `<body>` to be our scrolling element for mobile layouts. */
+  flex: 1 0 auto;
+}
+
 .toolbar-header {
   display: flex;
+  position: fixed;
   justify-content: space-between;
   font-size: 1em;
   font-weight: 300;
   background: var(--blackish);
+  /* Make sure the toolbar will stay on top of the content as it scrolls past. */
+  z-index: 2;
+}
+
+.menu-mobile-container {
+  display: none;
 }
 
 .logo {
   font-size: 1.5em;
 }
 
-.toolbar-options {
+.toolbar-options-left,
+.toolbar-options-right {
   display: flex;
   justify-content: space-between;
-  width: 175px;
+  width: 10rem;
 }
+
+.toolbar-options-left span {
+  padding: 0 1rem;
+}
+
+/* Main */
 
 section.main-container {
   width: 100%;
-  height: 500px;
-  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  height: 40rem;
+  background-image: url('/assets/images/home/planet-581239_1280.jpg');
   background-size: cover;
 }
 
@@ -140,17 +174,11 @@ hr {
   border-radius: 3px;
 }
 
-.example-header-image {
-  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
-  background-size: cover;
-}
-
 .combo {
   display: grid;
-  padding-bottom: 5rem;
 }
 
-img {
+.combo img {
   object-fit: cover;
   width: 100%;
   height: auto;
@@ -206,8 +234,6 @@ img {
 
 .img-widget > img {
   border-radius: 50%;
-  height: 150px;
-  width: 150px;
 }
 
 .widget-caption {
@@ -341,6 +367,9 @@ img {
 .feature-area .logo > img {
   height: 48px;
   width: 48px;
+  background: var(--white);
+  border-radius: 2rem;
+  padding: 0.4rem;
 }
 
 .feature-area .text > p {
@@ -364,9 +393,29 @@ img {
   padding: 1rem;
 }
 
-@media (max-width: 700px) {
-  .toolbar-header {
+@media (max-width: 768px) {
+  .toolbar-options-right > span:last-child {
     display: none;
+  }
+
+  .toolbar-options-right > span:first-child {
+    display: none;
+  }
+
+  .toolbar-options-right {
+    width: 3rem;
+  }
+
+  .toolbar-header {
+    height: 64px;
+  }
+
+  .toolbar-options-left {
+    display: none;
+  }
+
+  .menu-mobile-container {
+    display: block;
   }
 
   .action-message > button {
@@ -394,5 +443,70 @@ img {
   .combo-2,
   .combo-3 {
     display: block;
+  }
+
+  .options-container {
+    display: block;
+  }
+
+  .widget-container {
+    padding: 2rem 1.5rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .widget-container {
+    padding: 0 6rem;
+    flex-wrap: wrap;
+  }
+
+  .options-container {
+    padding: 3rem 3rem;
+  }
+
+  .footer-container {
+    display: grid;
+    grid-template-columns: 22rem;
+    justify-content: center;
+  }
+
+  .footer-container > .category-area {
+    padding: 0px 0rem 2rem 0rem;
+  }
+
+  .category-area > .category-grid {
+    border-right: none;
+  }
+}
+
+@media (max-width: 351px) {
+  .footer-container {
+    font-size: 0.7rem;
+    padding: 0;
+  }
+
+  .content > .text {
+    line-height: 1.1rem;
+    font-size: 0.7rem;
+  }
+
+  .card-group {
+    grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+  }
+
+  .learn-more {
+    text-align: center;
+  }
+
+  .footer-container {
+    display: grid;
+    grid-template-columns: 15rem;
+    justify-content: center;
+  }
+
+  .feature-area > .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 }

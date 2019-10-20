@@ -4,8 +4,14 @@
     color="primary"
     role="heading"
     aria-label="heading"
+    [class.is-mobile]
   >
-    <div class="toolbar-options">
+    <div class="menu-mobile-container">
+      <button class="menu-mobile" mat-icon-button (click)="snav.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+    </div>
+    <div class="toolbar-options-left">
       <span>Photos</span>
       <span>Illustrations</span>
       <span>Video</span>
@@ -13,12 +19,24 @@
     <div>
       <span class="logo">Rich 📷 Stock</span>
     </div>
-    <div class="toolbar-options">
+    <div class="toolbar-options-right">
       <span>Pricing</span>
       <span>Sign in</span>
       <span>Join</span>
     </div>
   </mat-toolbar>
+  <mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #snav [fixedInViewport]="2" fixedTopGap="63">
+      <mat-nav-list>
+        <a mat-list-item routerLink=".">Pricing</a>
+        <a mat-list-item routerLink=".">Sell</a>
+        <a mat-list-item routerLink=".">Videos</a>
+        <a mat-list-item routerLink=".">Illustrations</a>
+        <a mat-list-item routerLink=".">Templates</a>
+        <a mat-list-item routerLink=".">Premium</a>
+      </mat-nav-list>
+    </mat-sidenav>
+  </mat-sidenav-container>
 </nav>
 <section class="main-container">
   <div class="welcome-message">
@@ -159,40 +177,28 @@
   <hr />
   <div class="widget-container">
     <div class="img-widget">
-      <img
-        src="https://as.ftcdn.net/r/v1/pics/60fbb357f70f471899aee3af5295dc4af929e550/home/showcased_artists/201718241.webp"
-        alt=""
-      />
+      <img src="/assets/images/home/circle-1.webp" alt="" />
       <div class="widget-caption">
         <p class="name">Flamingo Images</p>
         <p class="title">Photographer</p>
       </div>
     </div>
     <div class="img-widget">
-      <img
-        src="https://as.ftcdn.net/r/v1/pics/a0d7490623c3a06755795a26e907a89deb0d71e2/home/showcased_artists/206482196.webp"
-        alt=""
-      />
+      <img src="/assets/images/home/circle-2.webp" alt="" />
       <div class="widget-caption">
         <p class="name">Eli Colombus</p>
         <p class="title">Illustrator</p>
       </div>
     </div>
     <div class="img-widget">
-      <img
-        src="https://as.ftcdn.net/r/v1/pics/9ce5e1006b5ef2dd9860a5d525b229c82fa70577/home/showcased_artists/200924422.webp"
-        alt=""
-      />
+      <img src="/assets/images/home/circle-3.webp" alt="" />
       <div class="widget-caption">
         <p class="name">Acki Amarongiu</p>
         <p class="title">Photographer</p>
       </div>
     </div>
     <div class="img-widget">
-      <img
-        src="https://as.ftcdn.net/r/v1/pics/460ad8a628c6dcc410a8d1d82db245123f16a8a6/home/showcased_artists/204918064.webp"
-        alt=""
-      />
+      <img src="/assets/images/home/circle-4.webp" alt="" />
       <div class="widget-caption">
         <p class="name">Grandfailure</p>
         <p class="title">Illustrator</p>
@@ -285,15 +291,12 @@
   <div class="feature-area">
     <div class="content">
       <div class="logo">
-        <img
-          src="https://as.ftcdn.net/r/v1/pics/e893df9b64ee1fce82be3882fc41b2c19867e041/all/default/icons/creativecloud_appicon_48_at2x.png"
-          alt=""
-        />
+        <img src="/assets/icons/camera.svg" alt="" />
       </div>
       <div class="text">
         <p>
           Beautiful fonts, anywhere you need them. Find great type for web,
-          print, and beyond with Adobe Fonts.
+          print, and beyond with RichStock&trade; Fonts.
         </p>
       </div>
       <div class="learn-more action-message">
