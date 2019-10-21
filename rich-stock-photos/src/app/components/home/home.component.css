@@ -120,7 +120,6 @@ mat-form-field.main-search {
 }
 
 .card-group-container {
-  width: 100vw;
   background: var(--smokey);
 }
 
@@ -391,6 +390,15 @@ hr {
 
 .feature-area > .content {
   padding: 1rem;
+}
+
+@media (max-width: 926px) {
+  .combo-1,
+  .combo-2,
+  .combo-3 {
+    display: block;
+    padding: 3rem 0;
+  }
 }
 
 @media (max-width: 768px) {
