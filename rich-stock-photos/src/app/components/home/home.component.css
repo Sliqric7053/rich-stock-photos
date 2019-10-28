@@ -33,8 +33,16 @@
   display: none;
 }
 
+.nav-link:hover {
+  cursor: pointer;
+}
+
 .logo {
   font-size: 1.5em;
+}
+
+.logo:hover {
+  cursor: pointer;
 }
 
 .toolbar-options-left,
@@ -46,6 +54,10 @@
 
 .toolbar-options-left span {
   padding: 0 1rem;
+}
+
+.toolbar-options-right span:hover {
+  cursor: pointer;
 }
 
 /* Main */
@@ -269,8 +281,13 @@ hr {
   width: 16rem;
 }
 
+.video-embed {
+  text-align: center;
+  padding-bottom: 2rem;
+}
+
 .purchase-container {
-  background: var(--white);
+  background: var(--smokey);
   text-align: center;
   padding-bottom: 4rem;
 }
@@ -383,13 +400,51 @@ hr {
 
 .feature-area {
   text-align: center;
-  display: flex;
+  /* display: flex; */
   align-items: center;
   line-height: 1rem;
+  padding-top: 6rem;
+}
+
+.feature-area > .newsletter {
+  /* border: 1px white solid; */
+  color: var(--white);
+  padding: 1rem;
+  border-radius: 1rem;
 }
 
 .feature-area > .content {
   padding: 1rem;
+}
+
+.iframe-container {
+  overflow: hidden;
+  padding-top: 56.25%;
+  position: relative;
+}
+
+.iframe-container iframe {
+  border: 0;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+/* 4x3 Aspect Ratio */
+.iframe-container-4x3 {
+  padding-top: 75%;
+}
+
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
 }
 
 @media (max-width: 926px) {
@@ -469,7 +524,7 @@ hr {
   }
 
   .options-container {
-    padding: 3rem 3rem;
+    padding: 0rem 3rem;
   }
 
   .footer-container {

@@ -1,43 +1,47 @@
-<nav>
-  <mat-toolbar
-    class="toolbar-header"
-    color="primary"
-    role="heading"
-    aria-label="heading"
-    [class.is-mobile]
-  >
-    <div class="menu-mobile-container">
-      <button class="menu-mobile" mat-icon-button (click)="snav.toggle()">
-        <mat-icon>menu</mat-icon>
-      </button>
-    </div>
-    <div class="toolbar-options-left">
-      <span>Photos</span>
-      <span>Illustrations</span>
-      <span>Video</span>
-    </div>
-    <div>
-      <span class="logo">Rich 📷 Stock</span>
-    </div>
-    <div class="toolbar-options-right">
-      <span>Pricing</span>
-      <span>Sign in</span>
-      <span>Join</span>
-    </div>
-  </mat-toolbar>
-  <mat-sidenav-container class="sidenav-container">
-    <mat-sidenav #snav [fixedInViewport]="2" fixedTopGap="63">
-      <mat-nav-list>
-        <a mat-list-item routerLink=".">Pricing</a>
-        <a mat-list-item routerLink=".">Sell</a>
-        <a mat-list-item routerLink=".">Videos</a>
-        <a mat-list-item routerLink=".">Illustrations</a>
-        <a mat-list-item routerLink=".">Templates</a>
-        <a mat-list-item routerLink=".">Premium</a>
-      </mat-nav-list>
-    </mat-sidenav>
-  </mat-sidenav-container>
-</nav>
+<header id="header" #home>
+  <nav id="nav-bar">
+    <mat-toolbar
+      class="toolbar-header"
+      color="primary"
+      role="heading"
+      aria-label="heading"
+      [class.is-mobile]
+    >
+      <div class="menu-mobile-container">
+        <button class="menu-mobile" mat-icon-button (click)="snav.toggle()">
+          <mat-icon>menu</mat-icon>
+        </button>
+      </div>
+      <div class="toolbar-options-left">
+        <span class="nav-link" (click)="scrollToElement(photos)">Photos</span>
+        <span class="nav-link" (click)="scrollToElement(contribute)"
+          >Contribute</span
+        >
+        <span class="nav-link" (click)="scrollToElement(video)">Video</span>
+      </div>
+      <div id="header-img">
+        <span class="logo" (click)="scrollToElement(home)">Rich 📷 Stock</span>
+      </div>
+      <div class="toolbar-options-right">
+        <span (click)="scrollToElement(pricing)">Pricing</span>
+        <span (click)="scrollToElement(signIn)">Sign in</span>
+        <span (click)="scrollToElement(join)">Join</span>
+      </div>
+    </mat-toolbar>
+    <mat-sidenav-container class="sidenav-container">
+      <mat-sidenav #snav [fixedInViewport]="2" fixedTopGap="63">
+        <mat-nav-list>
+          <a mat-list-item routerLink=".">Pricing</a>
+          <a mat-list-item routerLink=".">Sell</a>
+          <a mat-list-item routerLink=".">Videos</a>
+          <a mat-list-item routerLink=".">Illustrations</a>
+          <a mat-list-item routerLink=".">Templates</a>
+          <a mat-list-item routerLink=".">Premium</a>
+        </mat-nav-list>
+      </mat-sidenav>
+    </mat-sidenav-container>
+  </nav>
+</header>
 <section class="main-container">
   <div class="welcome-message">
     <p class="text-extralarge">
@@ -61,7 +65,7 @@
     <button mat-stroked-button color="primary" class="action">Start now</button>
   </div>
 </section>
-<section class="card-group-container">
+<section class="card-group-container" #photos>
   <div class="collections-message">
     <p>
       curated asset collections
@@ -75,6 +79,8 @@
   <section class="card-group">
     <mat-card class="example-card">
       <img
+        width="640"
+        height="425"
         class="image"
         mat-card-image
         src="assets/fox-640x425.jpg"
@@ -90,6 +96,8 @@
     </mat-card>
     <mat-card class="example-card">
       <img
+        width="640"
+        height="489"
         class="image"
         mat-card-image
         src="assets/flowers-640x489.png"
@@ -104,6 +112,8 @@
     </mat-card>
     <mat-card class="example-card">
       <img
+        width="640"
+        height="525"
         class="image"
         mat-card-image
         src="assets/bible-letters-640x525.png"
@@ -129,9 +139,14 @@
     </p>
   </div>
   <hr />
-  <section class="combo">
+  <section class="combo" id="photos" name="photos">
     <div class="combo-1">
-      <img src="assets/images/ara-640x426.jpg" alt="Photo of a.." />
+      <img
+        width="640"
+        height="426"
+        src="assets/images/ara-640x426.jpg"
+        alt="Photo of a.."
+      />
       <div class="message-area">
         <p class="combo-message-heading">
           Sprint from Zero to Hero
@@ -144,7 +159,12 @@
       </div>
     </div>
     <div class="combo-2">
-      <img src="assets/images/cat-640x426.jpg" alt="Photo of a.." />
+      <img
+        width="640"
+        height="426"
+        src="assets/images/cat-640x426.jpg"
+        alt="Photo of a.."
+      />
       <div class="message-area">
         <p class="combo-message-heading">Fast and Consistent</p>
         <p class="combo-message">
@@ -154,7 +174,12 @@
       </div>
     </div>
     <div class="combo-3">
-      <img src="assets/images/ara-640x426.jpg" alt="Photo of a.." />
+      <img
+        width="640"
+        height="426"
+        src="assets/images/ara-640x426.jpg"
+        alt="Photo of a.."
+      />
       <div class="message-area">
         <p class="combo-message-heading">Versatile</p>
         <p class="combo-message">
@@ -165,7 +190,7 @@
     </div>
   </section>
 </section>
-<section class="contributor-container">
+<section class="contributor-container" #contribute>
   <div class="promo-message contributor-header-caption">
     <p>
       artists rule
@@ -214,7 +239,25 @@
     </button>
   </div>
 </section>
-<section class="purchase-container">
+<section class="video-embed">
+  <div class="promo-message contributor-header-caption">
+    <p>
+      artists rule
+    </p>
+    <p>
+      Get inspired by these RichStock&trade; contributors.
+    </p>
+  </div>
+  <hr />
+  <div class="iframe-container" #video>
+    <iframe
+      id="video"
+      src="https://www.youtube.com/embed/tgbNymZ7vqY?playlist=tgbNymZ7vqY&loop=1&autoplay=1"
+    >
+    </iframe>
+  </div>
+</section>
+<section class="purchase-container" #pricing>
   <div class="header">
     <p>Purchase options to meet your needs</p>
   </div>
@@ -255,7 +298,7 @@
     </div>
   </div>
 </section>
-<section class="footer-container">
+<section class="footer-container" #signIn #join>
   <div class="category-area">
     <div class="header-text">
       <p>Search smarter</p>
@@ -289,6 +332,19 @@
     </div>
   </div>
   <div class="feature-area">
+    <div class="newsletter">
+        <form class="example-form">
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Email" [formControl]="emailFormControl">
+              <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+                Please enter a valid email address
+              </mat-error>
+              <mat-error *ngIf="emailFormControl.hasError('required')">
+                Email is <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+          </form>
+    </div>
     <div class="content">
       <div class="logo">
         <img src="/assets/icons/camera.svg" alt="" />
