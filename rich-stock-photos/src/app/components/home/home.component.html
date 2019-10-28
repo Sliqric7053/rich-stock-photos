@@ -333,17 +333,36 @@
   </div>
   <div class="feature-area">
     <div class="newsletter">
-        <form class="example-form">
-            <mat-form-field class="example-full-width">
-              <input matInput placeholder="Email" [formControl]="emailFormControl">
-              <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
-                Please enter a valid email address
-              </mat-error>
-              <mat-error *ngIf="emailFormControl.hasError('required')">
-                Email is <strong>required</strong>
-              </mat-error>
-            </mat-form-field>
-          </form>
+      <form id="form" class="example-form" >
+        <mat-form-field class="example-full-width">
+          <input
+            id="email"
+            matInput
+            placeholder="Email"
+            [formControl]="emailFormControl"
+          />
+
+          <mat-error
+            *ngIf="
+              emailFormControl.hasError('email') &&
+              !emailFormControl.hasError('required')
+            "
+          >
+            Please enter a valid email address
+          </mat-error>
+          <mat-error *ngIf="emailFormControl.hasError('required')">
+            Email is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+      </form>
+      <button
+      id="submit"
+        mat-icon-button
+        [disabled]=!emailFormControl.valid
+        aria-label="Example icon-button with a heart icon"
+      >
+        <mat-icon>send</mat-icon>
+      </button>
     </div>
     <div class="content">
       <div class="logo">

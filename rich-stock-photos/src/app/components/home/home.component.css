@@ -407,7 +407,7 @@ hr {
 }
 
 .feature-area > .newsletter {
-  /* border: 1px white solid; */
+  display: flex;
   color: var(--white);
   padding: 1rem;
   border-radius: 1rem;
@@ -445,6 +445,10 @@ hr {
 
 .example-full-width {
   width: 100%;
+}
+
+#email::after {
+  background: black;
 }
 
 @media (max-width: 926px) {
